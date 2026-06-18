@@ -1,0 +1,69 @@
+.tech-section {
+  position: relative;
+}
+
+.tech-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 2rem;
+  justify-content: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.tech-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Custom glowing effect using the CSS variable */
+.tech-card:hover {
+  border-color: var(--hover-glow) !important;
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.4), 
+              0 0 20px -2px var(--hover-glow) !important;
+}
+
+.tech-icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  margin-bottom: 1rem;
+  transition: var(--transition-smooth);
+}
+
+.tech-icon-box svg {
+  width: 28px;
+  height: 28px;
+  transition: transform 0.4s ease;
+}
+
+.tech-card:hover .tech-icon-box svg {
+  transform: rotate(360deg);
+}
+
+.tech-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  font-family: var(--font-header);
+}
+
+@media (max-width: 600px) {
+  .tech-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+}

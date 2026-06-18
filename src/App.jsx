@@ -1,30 +1,44 @@
-import React from 'react'
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import About from './components/About'
-import Technologies from './components/Technologies'
-import Experience from './components/Experience'
-import Projects from './components/Projects'
-import Contact from './components/Contact'
-const App = () => {
+import React from 'react';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import About from './components/About';
+import Technologies from './components/Technologies';
+import Projects from './components/Projects';
+import Contact from './components/Contact';
+
+export default function App() {
   return (
-    <div className='overflow-x-hidden text-neutral-300 antialiased selection:bg-cyan-300 selection:text-cyan-900'>
-      <div className='fixed top-0 -z-10 h-full w-full'>
-      <div className="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
+    <>
+      {/* Background Ambient Glows */}
+      <div className="ambient-glow-container">
+        <div className="glow-blob blob-1"></div>
+        <div className="glow-blob blob-2"></div>
+        <div className="glow-blob blob-3"></div>
       </div>
 
-      <div className='conatainer mx-auto px-8'>
-      <Navbar/>
-      <Hero/>
-      <About/>
-      <Technologies/>
-      {/* <Experience/> */}
-      <Projects/>
-      <Contact/>
+      {/* Floating Navbar */}
+      <Navbar />
+
+      {/* Main Structural Layout */}
+      <div className="portfolio-container">
+        <Hero />
+        <About />
+        <Technologies />
+        <Projects />
+        <Contact />
+
+        {/* Footer */}
+        <footer style={{
+          textAlign: 'center',
+          padding: '2rem 0 3rem',
+          borderTop: '1px solid rgba(255, 255, 255, 0.03)',
+          color: 'var(--color-text-muted)',
+          fontSize: '0.85rem',
+          marginTop: '4rem'
+        }}>
+          <p>© {new Date().getFullYear()} Shivansh. All rights reserved.</p>
+        </footer>
       </div>
-      
-    </div>
-  )
+    </>
+  );
 }
-
-export default App
